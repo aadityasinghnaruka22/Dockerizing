@@ -1,0 +1,12 @@
+step1 : create spring boot project and restApi.
+step2 : add docker file and add configuration.
+			FROM openjdk:8
+			EXPOSE 8080
+			ADD target/jarfile.jar jarfile.jar
+			ENTRYPOINT [ "java", "-jar", "/jarfile.jar" ]
+
+step3 : add "<finalName>jar file Name</finalName>" after <plugins> into <build> tag
+step4 : build spring Application.
+step5 : run command into cmd at project directory.
+			a. docker build -t spring-boot-docker.jar .
+			b. docker run -p 9090:8080 spring-boot-docker.jar
